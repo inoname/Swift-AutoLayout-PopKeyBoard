@@ -3,5 +3,5 @@
 
 
 ![image](https://github.com/kouliang/Swift-AutoLayout-PopKeyBoard/blob/master/image/1.png)
-
+---
 ![image](https://github.com/kouliang/Swift-AutoLayout-PopKeyBoard/blob/master/image/2.png)
