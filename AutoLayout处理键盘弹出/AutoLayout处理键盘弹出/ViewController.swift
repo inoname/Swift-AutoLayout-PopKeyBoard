@@ -22,20 +22,17 @@ class ViewController: UIViewController {
 
     /// 键盘变化监听方法
     func keyboardFrameChanged(notification: NSNotification) {
-        var height: CGFloat = 0
-        var duration = 0.25
-        
         if notification.name == UIKeyboardWillChangeFrameNotification {
             let rect = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-            height = rect.size.height
+            let height = rect.size.height
             
-            duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        }
-        
-        bottomConstraint.constant = height
-        
-        UIView.animateWithDuration(duration) {
-            self.view.layoutIfNeeded()
+            let  duration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+            bottomConstraint.constant = height
+            UIView.animateWithDuration(duration) {
+                self.view.layoutIfNeeded()
+            }
+        }else{
+            bottomConstraint.constant = 0
         }
     }
 
